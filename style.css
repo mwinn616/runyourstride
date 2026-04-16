@@ -29,6 +29,7 @@ body {
     background-color: #fff1ca;
      font-size: 18px;
 }
+
 h1 {
     font-size: 20px;
     padding-bottom: 0px;
@@ -47,6 +48,8 @@ label {
     font-size: 16px;
 
 }
+
+
 .container {
     margin: auto;
     text-align: left;
@@ -130,6 +133,8 @@ button {
 
 button:active {
     transform: scale(.99);
+      background-color: #005f81; ;
+    opacity: 0.8;
 }
 
 
@@ -157,12 +162,11 @@ img {
     align-items: center;
 }
 
-#reset-button:hover {
-   color: rgb(13, 16, 36);
-}
 
-#calculate-button:hover {
-    background-color: rgb(23, 30, 65); /* Darker shade on hover */
+
+.pace-chart-content {
+    display: flex;
+    gap: 64px;
 }
 
 

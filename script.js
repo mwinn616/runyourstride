@@ -1,4 +1,3 @@
-
 function seconds_to_hhmmss(seconds) {
     var h = Math.floor(seconds / 3600);
     var m = Math.floor((seconds % 3600) / 60);
@@ -31,6 +30,18 @@ var _get = {
     }
 };
 
+var modal = {
+    open: function(message) {
+        document.getElementById("modal-message").textContent = message;
+        document.getElementById("modal-overlay").style.display = "flex";
+    },
+    close: function() {
+        document.getElementById("modal-overlay").style.display = "none";
+    }
+};
+
+var lastCalculated = null;
+
 var calculate = {
     missingField: function() {
         var time = _get.time();
@@ -43,32 +54,40 @@ var calculate = {
         if (!distance) missing.push("distance");
         if (!pace) missing.push("pace");
 
+        // If all three fields are filled and we have a previously calculated field,
+        // recalculate that same field using the updated inputs.
+        if (missing.length === 0 && lastCalculated) {
+            missing.push(lastCalculated);
+        }
+
         if (missing.length > 1) {
             modal.open("Please enter values for at least two fields.");
             return;
         }
 
-        if (!time) {
+        if (missing[0] === "time" || !time) {
             var totalTime = distance * pace;
             var timeObj = seconds_to_hhmmss(totalTime);
             document.getElementById("time-hours").value = timeObj.h;
             document.getElementById("time-minutes").value = timeObj.m;
             document.getElementById("time-seconds").value = timeObj.s;
-            modal.open("Time calculated successfully!");
-        } else if (!distance) {
+            lastCalculated = "time";
+        } else if (missing[0] === "distance" || !distance) {
             var calculatedDistance = time / pace;
             document.getElementById("distance-amount").value = calculatedDistance.toFixed(2);
-            document.getElementById("race-distance").value = "other"; // Set dropdown to "Other"
-            modal.open("Distance calculated successfully!");
-        } else if (!pace) {
+            document.getElementById("race-distance").value = "other";
+            lastCalculated = "distance";
+        } else if (missing[0] === "pace" || !pace) {
             var calculatedPaceSec = time / distance;
             var paceObj = seconds_to_hhmmss(calculatedPaceSec);
             document.getElementById("pace-minutes").value = paceObj.m;
             document.getElementById("pace-seconds").value = paceObj.s;
-            modal.open("Pace calculated successfully!");
+            lastCalculated = "pace";
         }
     }
 };
+
+
 
 
 function showResetButton() {
@@ -85,6 +104,12 @@ function resetFields() {
     document.getElementById("pace-seconds").value = "";
 
     document.getElementById("reset-button").style.display = "none"; // Hide button again
+
+    // Reset the "Other" distance input visibility
+    document.getElementById("distance-amount").style.display = "none";
+    document.getElementById("race-distance").value = "";
+
+    lastCalculated = null;
 }
 
 function setDistance() {
@@ -105,10 +130,3 @@ function setDistance() {
 
     showResetButton(); // Show reset button when user interacts
 }
-
-
-
-
-
-
-
