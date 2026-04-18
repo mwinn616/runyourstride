@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stride — Running Calculator</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBW9GCYMW4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GBW9GCYMW4');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700;900&family=Lato:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="./images/runninglogo.png" alt="Stride">
+        <span>Stride</span>
+      </a>
+      <button class="theme-btn" id="themeBtn" onclick="app.toggleTheme()">🌙</button>
+    </div>
+  </header>
+
+  <!-- App Banner -->
+  <div id="app-banner" class="app-banner" style="display:none;">
+    <div class="app-banner-inner">
+      <img src="./images/runninglogo.png" alt="Stride" class="app-banner-icon">
+      <div class="app-banner-text">
+        <span class="app-banner-title">Stride for iPhone</span>
+        <span class="app-banner-sub">The full app — free on the App Store.</span>
+      </div>
+      <a href="https://apps.apple.com/app/stride-running-calculator/id6747827741" target="_blank" class="app-banner-btn" aria-label="Download on the App Store">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        App Store
+      </a>
+      <button class="app-banner-close" onclick="appBanner.dismiss()" aria-label="Dismiss">✕</button>
+    </div>
+  </div>
+
+  <!-- Tab Nav -->
+  <nav class="tab-nav">
+    <button class="tab-btn active" data-tab="calculator" onclick="app.switchTab('calculator')">
+      <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="14" y1="18" x2="16" y2="18"/></svg>
+      <span class="tab-label">Calculator</span>
+    </button>
+    <button class="tab-btn" data-tab="chart" onclick="app.switchTab('chart')">
+      <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      <span class="tab-label">Pace Chart</span>
+    </button>
+    <button class="tab-btn" data-tab="predictor" onclick="app.switchTab('predictor')">
+      <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+      <span class="tab-label">Predict</span>
+    </button>
+    <button class="tab-btn" data-tab="training" onclick="app.switchTab('training')">
+      <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <span class="tab-label">Training</span>
+    </button>
+    <button class="tab-btn" data-tab="history" onclick="app.switchTab('history')">
+      <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span class="tab-label">History</span>
+    </button>
+  </nav>
+
+  <!-- Main -->
+  <main class="app-main">
+
+    <!-- ── CALCULATOR ─────────────────────────────────────────────────────── -->
+    <section id="tab-calculator" class="tab-section active">
+      <div class="section-header">
+        <h2>Calculator</h2>
+        <p class="section-sub">Enter any two fields to calculate the third.</p>
+      </div>
+
+      <div class="card">
+        <!-- Distance -->
+        <div class="field-group">
+          <label class="field-label">Distance</label>
+          <select id="race-distance" class="field-select" onchange="calculator.setDistance()">
+            <option value="">Select a distance</option>
+            <option value="3.10686">5K</option>
+            <option value="6.21371">10K</option>
+            <option value="13.1094">Half-Marathon</option>
+            <option value="26.2188">Marathon</option>
+            <option value="other">Other (miles)</option>
+          </select>
+          <input type="number" id="distance-amount" class="field-input mt-8" placeholder="Enter distance in miles" style="display:none;" oninput="calculator.onInput()">
+        </div>
+
+        <!-- Time -->
+        <div class="field-group">
+          <label class="field-label">Time</label>
+          <div class="time-row">
+            <input type="number" id="time-hours"   class="time-input" placeholder="hh" min="0" oninput="calculator.onInput()">
+            <span class="time-sep">:</span>
+            <input type="number" id="time-minutes" class="time-input" placeholder="mm" min="0" max="59" oninput="calculator.onInput()">
+            <span class="time-sep">:</span>
+            <input type="number" id="time-seconds" class="time-input" placeholder="ss" min="0" max="59" oninput="calculator.onInput()">
+          </div>
+        </div>
+
+        <!-- Pace -->
+        <div class="field-group">
+          <label class="field-label">
+            Pace
+            <span class="inline-toggle">
+              <button class="unit-pill active" id="calcUnitMi" onclick="calculator.setPaceUnit('mi')">mi</button>
+              <button class="unit-pill"        id="calcUnitKm" onclick="calculator.setPaceUnit('km')">km</button>
+            </span>
+          </label>
+          <div class="time-row">
+            <input type="number" id="pace-minutes" class="time-input wide" placeholder="mm" min="0" oninput="calculator.onInput()">
+            <span class="time-sep">:</span>
+            <input type="number" id="pace-seconds" class="time-input wide" placeholder="ss" min="0" max="59" oninput="calculator.onInput()">
+          </div>
+        </div>
+
+        <button class="btn-primary full-width mt-16" onclick="calculator.calculate()">Calculate</button>
+        <button class="btn-outline full-width mt-8"  id="splitsBtn" onclick="calculator.showSplits()" style="display:none;">View Splits</button>
+        <button class="btn-ghost   full-width mt-4"  id="resetBtn"  onclick="calculator.reset()"      style="display:none;">Reset</button>
+      </div>
+    </section>
+
+    <!-- ── PACE CHART ──────────────────────────────────────────────────────── -->
+    <section id="tab-chart" class="tab-section">
+      <div class="section-header">
+        <h2>Pace Chart</h2>
+        <p class="section-sub">Finish times by pace for common distances.</p>
+      </div>
+      <div class="pill-row">
+        <button class="pill-btn active" id="chartUnitMi" onclick="paceChart.setUnit('mi')">per mile</button>
+        <button class="pill-btn"        id="chartUnitKm" onclick="paceChart.setUnit('km')">per km</button>
+      </div>
+      <div class="card table-card">
+        <table class="pace-table">
+          <thead>
+            <tr><th>Pace</th><th>5K</th><th>10K</th><th>Half</th><th>Full</th></tr>
+          </thead>
+          <tbody id="paceTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── PREDICTOR ───────────────────────────────────────────────────────── -->
+    <section id="tab-predictor" class="tab-section">
+      <div class="section-header">
+        <h2>Race Predictor</h2>
+        <p class="section-sub">Predict finish times from a recent race using the Riegel formula.</p>
+      </div>
+      <div class="card">
+        <div class="field-group">
+          <label class="field-label">Your Recent Race</label>
+          <select id="predictor-distance" class="field-select" onchange="predictor.calculate()">
+            <option value="">Select a distance</option>
+            <option value="5">5K</option>
+            <option value="10">10K</option>
+            <option value="21.0975">Half-Marathon</option>
+            <option value="42.195">Marathon</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Your Finish Time</label>
+          <div class="time-row">
+            <input type="number" id="pred-hours"   class="time-input" placeholder="hh" min="0" oninput="predictor.calculate()">
+            <span class="time-sep">:</span>
+            <input type="number" id="pred-minutes" class="time-input" placeholder="mm" min="0" max="59" oninput="predictor.calculate()">
+            <span class="time-sep">:</span>
+            <input type="number" id="pred-seconds" class="time-input" placeholder="ss" min="0" max="59" oninput="predictor.calculate()">
+          </div>
+        </div>
+      </div>
+      <div id="predictor-results" style="display:none;">
+        <div class="results-header">
+          <span class="results-label">Predicted Times</span>
+          <span class="inline-toggle">
+            <button class="unit-pill active" id="predUnitMi" onclick="predictor.setUnit('mi')">mi</button>
+            <button class="unit-pill"        id="predUnitKm" onclick="predictor.setUnit('km')">km</button>
+          </span>
+        </div>
+        <div id="predictor-cards"></div>
+      </div>
+    </section>
+
+    <!-- ── TRAINING ────────────────────────────────────────────────────────── -->
+    <section id="tab-training" class="tab-section">
+      <div class="section-header">
+        <h2>Training Zones</h2>
+        <p class="section-sub">Distance-calibrated training paces based on your goal race.</p>
+      </div>
+      <div class="card">
+        <div class="field-group">
+          <label class="field-label">Goal Race</label>
+          <select id="training-race" class="field-select" onchange="training.calculate()">
+            <option value="">Select a race</option>
+            <option value="5k">5K</option>
+            <option value="10k">10K</option>
+            <option value="half">Half-Marathon</option>
+            <option value="full">Marathon</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Goal Time</label>
+          <div class="time-row">
+            <input type="number" id="train-hours"   class="time-input" placeholder="hh" min="0" oninput="training.calculate()">
+            <span class="time-sep">:</span>
+            <input type="number" id="train-minutes" class="time-input" placeholder="mm" min="0" max="59" oninput="training.calculate()">
+            <span class="time-sep">:</span>
+            <input type="number" id="train-seconds" class="time-input" placeholder="ss" min="0" max="59" oninput="training.calculate()">
+          </div>
+        </div>
+      </div>
+      <div id="training-results" style="display:none;">
+        <div class="results-header">
+          <span class="results-label">Training Zones</span>
+          <span class="inline-toggle">
+            <button class="unit-pill active" id="trainUnitMi" onclick="training.setUnit('mi')">mi</button>
+            <button class="unit-pill"        id="trainUnitKm" onclick="training.setUnit('km')">km</button>
+          </span>
+        </div>
+        <div id="training-zone-cards"></div>
+      </div>
+    </section>
+
+    <!-- ── HISTORY ─────────────────────────────────────────────────────────── -->
+    <section id="tab-history" class="tab-section">
+      <div class="section-header">
+        <div class="section-header-row">
+          <h2>History</h2>
+          <button class="btn-ghost-sm" onclick="historyTab.clearAll()">Clear All</button>
+        </div>
+        <p class="section-sub">Your recent pace calculations.</p>
+      </div>
+      <div id="history-list"></div>
+      <div id="history-empty" class="empty-state" style="display:none;">
+        No calculations saved yet.<br>Head to the Calculator to get started.
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Splits Modal -->
+  <div id="splits-modal" class="modal-overlay" style="display:none;" onclick="calculator.hideSplits()">
+    <div class="modal-sheet" onclick="event.stopPropagation()">
+      <div class="modal-titlebar">
+        <span class="modal-title">Mile Splits</span>
+        <button class="modal-close" onclick="calculator.hideSplits()">✕</button>
+      </div>
+      <div id="splits-content" class="splits-body"></div>
+    </div>
+  </div>
+
+  <!-- Error Modal -->
+  <div id="error-modal" class="modal-overlay" style="display:none;" onclick="app.closeError()">
+    <div class="modal-sheet modal-sm" onclick="event.stopPropagation()">
+      <p id="error-message" class="error-msg"></p>
+      <button class="btn-primary full-width" onclick="app.closeError()">OK</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
