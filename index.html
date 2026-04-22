@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stride — Free Running Pace Calculator App for iPhone</title>
+  <title>Run Your Stride — Free Running Pace Calculator App for iPhone</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBW9GCYMW4"></script>
   <script>
@@ -14,7 +14,7 @@
   </script>
 
   <!-- Primary SEO -->
-  <meta name="description" content="Stride is a free iPhone app for runners. Calculate pace, predict race times, generate training zones, view per-mile splits, and track every result. No account. No subscription.">
+  <meta name="description" content="Run Your Stride is a free iPhone app for runners. Calculate pace, predict race times, generate training zones, view per-mile splits, and track every result. No account. No subscription.">
   <meta name="keywords" content="running pace calculator, race time predictor, marathon pace calculator, half marathon calculator, training zones, running app, pace chart, mile splits">
   <link rel="canonical" href="https://runyourstride.com/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -22,43 +22,43 @@
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://runyourstride.com/">
-  <meta property="og:site_name"   content="Stride">
-  <meta property="og:title"       content="Stride — Free Running Pace Calculator App for iPhone">
+  <meta property="og:site_name"   content="Run Your Stride">
+  <meta property="og:title"       content="Run Your Stride — Free Running Pace Calculator App for iPhone">
   <meta property="og:description" content="Five powerful tools for runners — pace calculator, race predictor, training zones, pace chart, and run history with splits. Free. No account required.">
-  <meta property="og:image"       content="https://cdn.prod.website-files.com/69e011d5ca9686f2fe4710ec/69e2a498a8a51d73066d5942_opengraph.png">
+  <meta property="og:image"       content="https://runyourstride.com/images/opengraph.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Stride — Free Running Pace Calculator App for iPhone">
+  <meta name="twitter:title"       content="Run Your Stride — Free Running Pace Calculator App for iPhone">
   <meta name="twitter:description" content="Five powerful tools for runners — pace calculator, race predictor, training zones, pace chart, and run history with splits. Free. No account required.">
-  <meta name="twitter:image"       content="https://cdn.prod.website-files.com/69e011d5ca9686f2fe4710ec/69e2a498a8a51d73066d5942_opengraph.png">
+  <meta name="twitter:image"       content="https://runyourstride.com/images/opengraph.png">
 
-  <meta name="theme-color" content="#0f9b8e">
-  <link rel="shortcut icon" href="images/Stride (2).png" type="image/x-icon">
-  <link rel="apple-touch-icon" href="images/Stride (2).png">
+  <meta name="theme-color" content="#1d9e75">
+  <link rel="shortcut icon" href="images/favicon-32.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Lato:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
     :root {
-      --teal:   #0f9b8e;
-      --teal-d: #0c7c71;
-      --dark:   #1a1a2e;
-      --cream-l: #f8f4ee;
-      --cream:  #f5f0e8;
-      --gray:   #010102;
+      --teal:   #1d9e75;
+      --teal-d: #178a60;
+      --dark:   #0f172a;
+      --cream-l: #f0ede8;
+      --cream:  #f0ede8;
+      --gray:   #0f172a;
       --white:  #ffffff;
     }
 
     body {
-      font-family: 'Lato', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       background: var(--cream-l);
-      color: #010102;
+      color: var(--gray);
       font-size: 1rem;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
@@ -66,15 +66,15 @@
     }
 
     h1, h2, h3, h4 {
-      font-family: 'League Spartan', sans-serif;
+      font-family: 'DM Serif Display', serif;
       margin: 0;
       line-height: 1.2;
     }
 
-    /* Webflow heading scale */
-    h1 { font-size: 4.5rem;  font-weight: 700; letter-spacing: -.045rem; }
-    h2 { font-size: 3.25rem; font-weight: 700; letter-spacing: -.0325rem; }
-    h3 { font-size: 2.75rem; font-weight: 400; letter-spacing: -.0275rem; }
+    /* Heading scale */
+    h1 { font-size: 4.5rem;  font-weight: 400; letter-spacing: -.02rem; }
+    h2 { font-size: 3.25rem; font-weight: 400; letter-spacing: -.015rem; }
+    h3 { font-size: 2.75rem; font-weight: 400; letter-spacing: -.01rem; }
 
     p  { margin-bottom: 0; }
     a  { text-decoration: none; color: inherit; }
@@ -107,7 +107,7 @@
       padding: 5px 0;
     }
     .navbar-logo img {
-      height: 100px;
+      height: 44px;
       width: auto;
     }
     .navbar-menu {
@@ -122,7 +122,7 @@
       padding: 1.5rem 1rem;
       font-size: 1rem;
       font-weight: 500;
-      color: #010102;
+      color: var(--gray);
       transition: opacity 0.2s;
     }
     .navbar-menu a:hover { opacity: 0.6; }
@@ -155,7 +155,7 @@
       margin-right: 5rem;
     }
     .hero-content h1 {
-      color: #010102;
+      color: var(--gray);
     }
     .hero-content h1.accent { color: var(--teal); }
     .hero-content h1 .accent { color: var(--teal); }
@@ -219,7 +219,7 @@
       color: var(--gray);
       transition: color 0.2s;
     }
-    .btn-link:hover { color: #010102; }
+    .btn-link:hover { color: var(--gray); }
     .btn-link svg { transition: transform 0.2s; }
     .btn-link:hover svg { transform: translateX(3px); }
 
@@ -243,35 +243,35 @@
       box-shadow: 0 12px 40px rgba(26,26,46,0.13), 0 2px 8px rgba(26,26,46,0.07);
       padding: 13px 15px;
       z-index: 10;
-      border: 1px solid rgba(26,26,46,0.06);
+      border: 1px solid rgba(15,23,42,0.06);
       min-width: 152px;
-      font-family: 'Lato', sans-serif;
+      font-family: 'DM Sans', sans-serif;
     }
     .stride-card-label {
       font-size: 9px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.7px;
-      color: #aaa;
+      color: #6b7280;
       margin-bottom: 5px;
     }
     .stride-card-value {
-      font-family: 'League Spartan', sans-serif;
+      font-family: 'DM Serif Display', serif;
       font-size: 26px;
-      font-weight: 900;
+      font-weight: 400;
       color: var(--dark);
       line-height: 1;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.3px;
     }
     .stride-card-value.teal { color: var(--teal); }
-    .stride-card-sub { font-size: 10px; font-weight: 600; color: #aaa; margin-top: 4px; }
-    .stride-zone-row { display: flex; align-items: center; gap: 7px; padding: 5px 0; border-bottom: 1px solid #f5f0e8; }
+    .stride-card-sub { font-size: 10px; font-weight: 600; color: #6b7280; margin-top: 4px; }
+    .stride-zone-row { display: flex; align-items: center; gap: 7px; padding: 5px 0; border-bottom: 1px solid var(--cream); }
     .stride-zone-row:last-child { border-bottom: none; padding-bottom: 0; }
     .stride-zone-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
     .stride-zone-name { font-size: 10px; font-weight: 700; color: var(--dark); flex: 1; }
-    .stride-zone-pace { font-size: 9px; font-weight: 600; color: #aaa; }
+    .stride-zone-pace { font-size: 9px; font-weight: 600; color: #6b7280; }
     .stride-split-row { display: flex; justify-content: space-between; font-size: 10px; padding: 2px 0; }
-    .stride-split-label { color: #aaa; font-weight: 600; }
+    .stride-split-label { color: #6b7280; font-weight: 600; }
     .stride-split-val   { font-weight: 800; color: var(--dark); }
     .stride-card-pace    { top: 18%;    left: 40px;  }
     .stride-card-zones   { bottom: 28%; left: 32px;  }
@@ -318,10 +318,10 @@
     }
     .section-heading {
       font-size: 3.25rem;
-      font-weight: 700;
-      letter-spacing: -.0325rem;
+      font-weight: 400;
+      letter-spacing: -.015rem;
       line-height: 1.2;
-      font-family: 'League Spartan', sans-serif;
+      font-family: 'DM Serif Display', serif;
       margin-bottom: 5rem;
     }
     .section-heading .accent { color: var(--teal); }
@@ -377,8 +377,8 @@
     }
 
     /* ── SHOWCASE ── */
-    .section-showcase { background: #fdfcfa; }
-    .section-showcase .section-heading { color: #010102; margin-bottom: 0; }
+    .section-showcase { background: var(--white); }
+    .section-showcase .section-heading { color: var(--gray); margin-bottom: 0; }
     .showcase-header { text-align: center; margin-bottom: 5rem; }
     .cta31-image-wrapper {
       border-radius: 8px;
@@ -396,7 +396,7 @@
     /* ── HOW IT WORKS ── */
     .section-how { background: var(--cream-l); }
     .how-header { text-align: center; margin-bottom: 5rem; }
-    .how-header .section-heading { color: #010102; margin-bottom: 0; }
+    .how-header .section-heading { color: var(--gray); margin-bottom: 0; }
     .steps-grid {
       display: grid;
       grid-template-columns: 1fr 2.5rem 1fr 2.5rem 1fr 2.5rem 1fr;
@@ -409,9 +409,9 @@
       width: 100%;
     }
     .step-number {
-      font-family: 'League Spartan', sans-serif;
+      font-family: 'DM Serif Display', serif;
       font-size: 3.5rem;
-      font-weight: 600;
+      font-weight: 400;
       color: var(--teal);
       line-height: 1;
       margin-bottom: 1.5rem;
@@ -429,7 +429,7 @@
       font-weight: 400;
       letter-spacing: -.0225rem;
       line-height: 1.3;
-      color: #010102;
+      color: var(--gray);
       margin-bottom: 1.5rem;
     }
     .step-item p {
@@ -448,8 +448,8 @@
     }
     .cta-inner h2 {
       font-size: 3.25rem;
-      font-weight: 700;
-      letter-spacing: -.0325rem;
+      font-weight: 400;
+      letter-spacing: -.015rem;
       line-height: 1.2;
       color: #fff;
       margin-bottom: 1.5rem;
@@ -552,7 +552,7 @@
       display: block;
       width: 24px;
       height: 2px;
-      background: #010102;
+      background: var(--gray);
       border-radius: 2px;
       transition: transform 0.25s, opacity 0.25s;
     }
@@ -618,7 +618,7 @@
   <nav class="navbar">
     <div class="navbar-container">
       <a href="#" class="navbar-logo">
-        <img src="images/Stride (2).svg" alt="Stride">
+        <img src="images/nav-logo.png" alt="Run Your Stride">
       </a>
       <ul class="navbar-menu" id="navbar-menu">
         <li><a href="#features" onclick="closeMenu()">Features</a></li>
@@ -655,18 +655,13 @@
     <div class="hero-image-wrapper">
       <div class="stride-cluster">
         <img
-          src="images/hero-phone.png"
-          srcset="images/hero-phone-500.png 500w,
-                  images/hero-phone-800.png 800w,
-                  images/hero-phone-1080.png 1080w,
-                  images/hero-phone.png 3252w"
-          sizes="(max-width: 767px) 300px, 100%"
-          alt="Stride app on iPhone"
+          src="images/hero-phone-new.png"
+          alt="Run Your Stride app on iPhone"
           class="hero-phone"
           loading="eager">
         <div class="stride-card stride-card-pace">
           <div class="stride-card-label">⚡ Pace Calculated</div>
-          <div class="stride-card-value teal">9:09<span style="font-size:13px;font-weight:600;color:#aaa;"> /mi</span></div>
+          <div class="stride-card-value teal">9:09<span style="font-size:13px;font-weight:600;color:#6b7280;"> /mi</span></div>
           <div class="stride-card-sub">Half-Marathon · 2:00:00</div>
         </div>
         <div class="stride-card stride-card-zones" style="min-width:164px;">
@@ -677,7 +672,7 @@
         </div>
         <div class="stride-card stride-card-predict">
           <div class="stride-card-label">🏅 Race Prediction</div>
-          <div class="stride-card-value teal">4:10<span style="font-size:13px;font-weight:600;">:11</span></div>
+          <div class="stride-card-value teal">4:10</div>
           <div class="stride-card-sub">Marathon · from half result</div>
         </div>
         <div class="stride-card stride-card-splits" style="min-width:128px;">
@@ -702,7 +697,7 @@
         <div class="feature-item fade-in fade-in-delay-1">
           <div class="feature-icon-wrap"><div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 22h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2zm3-3H7v-2h2v2zm0-4H7v-2h2v2zm0-4H7V9h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V9h2v2zm4 8h-2v-6h2v6zm0-8h-2V9h2v2zM6 4h12v3H6V4z"/></svg></div></div>
           <h3>Pace Calculator</h3>
-          <p>Enter any two of distance, time, or pace — Stride solves the third instantly. Supports 5K, 10K, Half-Marathon, Marathon, and any custom distance in miles or kilometers.</p>
+          <p>Enter any two of distance, time, or pace — Run Your Stride solves the third instantly. Supports 5K, 10K, Half-Marathon, Marathon, and any custom distance in miles or kilometers.</p>
         </div>
         <div class="feature-item fade-in fade-in-delay-2">
           <div class="feature-icon-wrap"><div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2M9 17H7v-7h2zm4 0h-2V7h2zm4 0h-2v-4h2z"/></svg></div></div>
@@ -742,13 +737,8 @@
       </div>
       <div class="cta31-image-wrapper fade-in fade-in-delay-2">
         <img
-          src="images/app-showcase.png"
-          srcset="images/app-showcase-500.png 500w,
-                  images/app-showcase-800.png 800w,
-                  images/app-showcase-1080.png 1080w,
-                  images/app-showcase.png 1878w"
-          sizes="(max-width: 767px) 100vw, 80vw"
-          alt="Stride app screens"
+          src="images/app-showcase-new.png"
+          alt="Run Your Stride app screens"
           class="cta31-image"
           loading="lazy">
       </div>
@@ -782,7 +772,7 @@
         <div class="step-item">
           <div class="step-number">3</div>
           <h3>Get Instant Results</h3>
-          <p>Stride calculates immediately — with full per-mile splits, calibrated training zones, or predicted race times depending on the tool you're using.</p>
+          <p>Run Your Stride calculates immediately — with full per-mile splits, calibrated training zones, or predicted race times depending on the tool you're using.</p>
         </div>
         <div class="step-connector">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -824,7 +814,7 @@
         <li><a href="support.html">Support</a></li>
       </ul>
       <div class="footer-credit">
-        <span>© 2026 Stride by</span>
+        <span>© 2026 Run Your Stride by</span>
         <a href="https://www.markwinndesigns.com/" target="_blank">Mark Winn Designs</a>
       </div>
     </div>
