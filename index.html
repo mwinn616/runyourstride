@@ -14,7 +14,7 @@
   </script>
 
   <!-- Primary SEO -->
-  <meta name="description" content="Run Your Stride is a free iPhone app for runners. Calculate pace, predict race times, generate training zones, view per-mile splits, and track every result. No account. No subscription.">
+  <meta name="description" content="Free iPhone app for runners. Calculate pace, predict race times, build training zones, view splits, and track every result. No account required.">
   <meta name="keywords" content="running pace calculator, race time predictor, marathon pace calculator, half marathon calculator, training zones, running app, pace chart, mile splits">
   <link rel="canonical" href="https://runyourstride.com/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -26,6 +26,8 @@
   <meta property="og:title"       content="Run Your Stride — Free Running Pace Calculator App for iPhone">
   <meta property="og:description" content="Five powerful tools for runners — pace calculator, race predictor, training zones, pace chart, and run history with splits. Free. No account required.">
   <meta property="og:image"       content="https://runyourstride.com/images/opengraph.png">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
@@ -587,13 +589,45 @@
       .stride-card-zones, .stride-card-predict { display: none; }
     }
   </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Run Your Stride",
+      "description": "Five powerful tools for runners — pace calculator, race predictor, training zones, pace chart, and run history with splits. Free. No account required.",
+      "operatingSystem": "iOS",
+      "applicationCategory": "SportsApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "downloadUrl": "https://apps.apple.com/us/app/run-your-stride/id6763099712",
+      "url": "https://runyourstride.com/",
+      "author": {
+        "@type": "Person",
+        "name": "Mark Winn",
+        "url": "https://www.markwinndesigns.com/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Run Your Stride",
+      "url": "https://runyourstride.com/"
+    }
+  ]
+  </script>
 </head>
 <body>
 
   <!-- NAV -->
   <nav class="navbar">
     <div class="navbar-container">
-      <a href="#" class="navbar-logo">
+      <a href="/" class="navbar-logo">
         <img src="images/nav-logo.png" alt="Run Your Stride">
       </a>
       <ul class="navbar-menu" id="navbar-menu">
