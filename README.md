@@ -4,6 +4,8 @@ A free running toolkit for iPhone, with a companion web app. Calculate pace, pre
 
 **Live site:** [runyourstride.com](https://runyourstride.com)
 
+**Live app in App Store:** [Run Your Stride] (https://apps.apple.com/us/app/run-your-stride/id6763099712)
+
 ---
 
 ## Features
@@ -69,7 +71,7 @@ npx serve .
 
 ## iOS App
 
-The native iPhone app is built with Swift and SwiftUI — coming soon to the App Store.
+**Live app in App Store:** [Run Your Stride] (https://apps.apple.com/us/app/run-your-stride/id6763099712)
 
 ---
 
